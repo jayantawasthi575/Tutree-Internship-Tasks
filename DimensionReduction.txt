@@ -1,0 +1,15 @@
+By Jayant Awasthi
+In Real World MachineLearning Problem it is often seen that  our Dataset can contain many features and may tend to millions.It is noticed that as Number of features increases the distance between two vectors also increases and our the Distribution tend to Sparse because of that when we try to fit any Machine Learning Algorithm then it tend to overfit the vectors and not able to generalised well.So, one solution of the above problem is to drop the unnecessary feature and it work well, but often lead to information lose.The other solution is to increase the data so to make the matrix dense but one can't imagine how much extra data is required to dense the matrix in dataset containing million feature.So the more often solution is to reduce the dimension i.e. make 3 dimension vector to 2d or 4d vector to 2d or 3d.
+
+Most popular dimensionality reduction algorithm out their is PCA (Principle Component Analysis)
+It basically works on preserving maximum amount of Variance,for example if u want to convert 4D to 2D,
+PCA will automatticaly find 2planes an all the hyperplanes that contains the maximum amount of variance.
+Here is the code:
+Suppose we want to covert 4d iris flower to 2d
+
+import pandas as pd
+iris=pd.read_csv("Iris.csv")
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+spark_iris_pca = pca.fit_transform(spark_iris)
+(Just a one line of code will do everything for us and we will easily convert 4D to 2D)
